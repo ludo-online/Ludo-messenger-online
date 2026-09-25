@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Ludo King - Play Now</title>
 
-<!-- OPEN GRAPH -->
+<!-- ⭐ OPEN GRAPH TAGS -->
+<meta property="og:url" content="https://ludo-messenger-online.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ludo King - Play Now">
 <meta property="og:description" content="Play Ludo King with your friends. Enjoy voice chat and win exciting rewards!">
@@ -14,6 +15,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
+
+<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ludo King - Play Now">
 <meta name="twitter:description" content="Play Ludo King with your friends!">
@@ -39,12 +42,11 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -webkit-user-select: none;
     user-select: none;
-    /* GPU acceleration hint */
     transform: translateZ(0);
 }
 
 /* ============================
-   ⭐ SIMPLE BACKGROUND — 1 LAYER ONLY
+   SIMPLE BACKGROUND — Smooth
    ============================ */
 .bg {
     position: fixed;
@@ -55,7 +57,6 @@ html, body {
         linear-gradient(180deg, #240046 0%, #14002b 50%, #0a0018 100%);
 }
 
-/* Single soft glow — no blur */
 .glow {
     position: fixed;
     top: 45%;
@@ -78,9 +79,6 @@ html, body {
     50%      { opacity: 1; }
 }
 
-/* ============================
-   FEW LIGHT PARTICLES
-   ============================ */
 .particles {
     position: fixed;
     inset: 0;
@@ -106,9 +104,6 @@ html, body {
     100% { transform: translate3d(0, -50px, 0); opacity: 0; }
 }
 
-/* ============================
-   PAGE LAYOUT
-   ============================ */
 .page {
     position: fixed;
     inset: 0;
@@ -121,9 +116,6 @@ html, body {
     text-align: center;
 }
 
-/* ============================
-   TITLE
-   ============================ */
 .title {
     font-family: 'Poppins', sans-serif;
     font-size: clamp(40px, 10vw, 72px);
@@ -148,9 +140,6 @@ html, body {
     text-shadow: 0 0 20px rgba(77, 148, 255, 0.6);
 }
 
-/* ============================
-   VOICE CHAT
-   ============================ */
 .voice-row {
     display: flex;
     align-items: center;
@@ -194,9 +183,6 @@ html, body {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* ============================
-   3D DICE SCENE
-   ============================ */
 .dice-scene {
     position: relative;
     width: min(380px, 90vw);
@@ -319,9 +305,6 @@ html, body {
 .face-5 .c1::before, .face-5 .c3::before, .face-5 .c5::before, .face-5 .c7::before, .face-5 .c9::before { display: block; }
 .face-6 .c1::before, .face-6 .c3::before, .face-6 .c4::before, .face-6 .c6::before, .face-6 .c7::before, .face-6 .c9::before { display: block; }
 
-/* ============================
-   4 BALLS
-   ============================ */
 .balls-row {
     display: flex;
     align-items: center;
@@ -375,9 +358,6 @@ html, body {
     50%      { transform: translate3d(0, -10px, 0); }
 }
 
-/* ============================
-   PLAY NOW
-   ============================ */
 .play-btn-wrap {
     position: relative;
     display: inline-block;
@@ -481,9 +461,6 @@ html, body {
     flex-shrink: 0;
 }
 
-/* ============================
-   RESPONSIVE
-   ============================ */
 @media (max-width: 480px) {
     .title { gap: 10px; }
     
@@ -548,7 +525,6 @@ html, body {
     .dashed-circle { width: 180px; height: 180px; }
 }
 
-/* Reduce motion for accessibility + performance */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -559,14 +535,10 @@ html, body {
 </head>
 <body>
 
-<!-- Simple Background -->
 <div class="bg"></div>
 <div class="glow"></div>
-
-<!-- Few particles -->
 <div class="particles" id="particles"></div>
 
-<!-- PAGE -->
 <div class="page">
 
     <div class="title">
@@ -709,15 +681,8 @@ html, body {
 </div>
 
 <script>
-/* =========================================
-   CONFIGURATION
-   ========================================= */
 const REDIRECT_URL = 'https://ludoking.com/';
-/* ========================================= */
 
-/* =========================================
-   ONLY 15 PARTICLES (was 40)
-   ========================================= */
 (function createParticles() {
     const container = document.getElementById('particles');
     const colors = ['#c084fc', '#e879f9', '#a855f7', '#fbbf24', '#60a5fa'];
@@ -735,9 +700,6 @@ const REDIRECT_URL = 'https://ludoking.com/';
     }
 })();
 
-/* =========================================
-   PLAY NOW → Redirect
-   ========================================= */
 document.getElementById('playBtn').addEventListener('click', () => {
     window.location.href = REDIRECT_URL;
 });
